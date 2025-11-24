@@ -14,6 +14,7 @@ import {
   FaPlay,
   FaPause,
   FaVolumeUp,
+  FaBriefcase,
 } from "react-icons/fa";
 import avatarImg from "../assets/avatar.jpg";
 
@@ -75,6 +76,15 @@ const ProfileCard = ({
           style={{ color: "#1b2838" }}
         >
           <FaSteam />
+        </a>
+        <a
+          href="https://tungtoxic.github.io/my-portfolio/"
+          target="_blank"
+          className="social-btn"
+          style={{ color: "#00d26a" }} /* Màu xanh lá nổi bật */
+          title="Xem Portfolio của tôi"
+        >
+          <FaBriefcase />
         </a>
       </div>
 
