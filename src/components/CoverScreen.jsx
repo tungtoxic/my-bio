@@ -94,8 +94,8 @@ const CoverScreen = () => {
           <Typewriter
             options={{
               strings: [
-                "Lập trình là nghệ thuật...",
-                "Code là những vần thơ...",
+                "Tôi tìm em trong bóng đêm",
+                "Ngỡ như em đã tồn tại",
                 "Chào mừng đến với thế giới của tôi.",
               ],
               autoStart: true,
