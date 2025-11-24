@@ -1,0 +1,33 @@
+.overlay-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Nền đen tuyền */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Luôn nằm trên cùng */
+  cursor: pointer; /* Biến con trỏ thành hình bàn tay */
+}
+
+.enter-text {
+  color: white;
+  font-family: "Courier New", Courier, monospace; /* Font kiểu máy đánh chữ */
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: blink 1.5s infinite; /* Hiệu ứng nhấp nháy */
+}
+
+/* Tạo hiệu ứng nhấp nháy */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

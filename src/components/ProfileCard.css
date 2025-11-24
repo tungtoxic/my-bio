@@ -1,0 +1,198 @@
+/* src/components/ProfileCard.css */
+
+/* 1. KHUNG CHÍNH (Trong suốt hoàn toàn nhưng có viền định hình) */
+.glass-card {
+  width: 90%;
+  max-width: 450px; /* Thu gọn chiều ngang lại xíu cho gọn */
+  padding: 40px;
+  border-radius: 20px;
+
+  /* Nền gần như trong suốt (chỉ đen 10% để tách nền nhẹ) */
+  background: rgba(0, 0, 0, 0.1);
+
+  /* Blur nhẹ để làm mịn các chi tiết nhiễu của hình nền phía sau chữ */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  /* Viền sáng mỏng để tạo khung */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Bóng đổ toàn khung để tách khỏi nền */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2. CHỮ (Quan trọng: Đổ bóng đậm để đọc được trên mọi hình nền) */
+.glass-card h2,
+.glass-card p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9); /* Bóng đen đậm dưới chữ */
+}
+
+/* 3. HUY HIỆU (Badges) */
+.badges-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: rgba(0, 0, 0, 0.4); /* Nền đen mờ */
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-shadow: none; /* Badge không cần bóng chữ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. SOCIAL ICONS */
+.social-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.social-btn {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s;
+  cursor: pointer;
+  /* Đổ bóng cho icon luôn */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.social-btn:hover {
+  color: white;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px currentColor); /* Phát sáng màu icon */
+}
+
+/* 5. DISCORD BOX (Làm lại cho trong suốt và hòa hợp) */
+.discord-box {
+  /* Thay vì màu đen đặc, dùng màu đen trong suốt 60% */
+  background: rgba(43, 45, 49, 0.7);
+  backdrop-filter: blur(10px); /* Kính mờ riêng cho hộp này */
+
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  margin-top: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+}
+
+.discord-avatar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.discord-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Text trong Discord */
+.discord-box h4,
+.discord-box p {
+  text-shadow: none; /* Trong hộp tối rồi không cần bóng chữ nữa */
+}
+
+.status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: #23a559;
+  border-radius: 50%;
+  border: 2px solid #2b2d31; /* Viền trùng màu nền hộp */
+  box-shadow: 0 0 5px #23a559; /* Chấm xanh phát sáng */
+}
+/* --- CSS CHO MUSIC PLAYER --- */
+
+.music-player-container {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Đường kẻ ngăn cách */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Nút Play tròn */
+.play-btn {
+  background: white;
+  color: black;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.play-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+/* Khu vực Volume */
+.volume-control {
+  flex: 1; /* Chiếm hết khoảng trống còn lại */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 15px;
+  border-radius: 20px;
+}
+
+.volume-icon {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Tùy chỉnh thanh trượt (Range Slider) */
+.volume-slider {
+  -webkit-appearance: none; /* Xóa style mặc định */
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Style cho cái cục tròn để kéo (Thumb) */
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
